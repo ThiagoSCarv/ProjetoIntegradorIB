@@ -22,20 +22,26 @@ public class CPF {
     }
 
     public Boolean isValid(String cpf) {
+        // Remove caracteres não numéricos
         cpf = cpf.replaceAll("[^0-9]", "");
 
+        // Verifica se o CPF tem 11 dígitos
         if (cpf.length() != 11) {
             return false;
         }
 
+        // Verifica se todos os dígitos são iguais (CPFs inválidos por regra)
         if (cpf.matches("(\\d)\\1{10}")) {
             return false;
         }
 
+        // 1º Cálculo do Dígito Verificador
         try {
             int soma = 0;
             int peso = 10;
+            // Itera sobre os 9 primeiros dígitos
             for (int i = 0; i < 9; i++) {
+                // Converte o char para int e multiplica pelo peso
                 soma += Character.getNumericValue(cpf.charAt(i)) * peso--;
             }
 
@@ -44,12 +50,15 @@ public class CPF {
                 primeiroDigitoVerificador = 0;
             }
 
+            // Compara o 1º dígito verificador calculado com o 10º dígito do CPF
             if (primeiroDigitoVerificador != Character.getNumericValue(cpf.charAt(9))) {
                 return false;
             }
 
+            // 2º Cálculo do Dígito Verificador
             soma = 0;
             peso = 11;
+            // Itera sobre os 10 primeiros dígitos (agora o 10º é o 1º DV)
             for (int i = 0; i < 10; i++) {
                 soma += Character.getNumericValue(cpf.charAt(i)) * peso--;
             }
@@ -59,9 +68,11 @@ public class CPF {
                 segundoDigitoVerificador = 0;
             }
 
+            // Compara o 2º dígito verificador calculado com o 11º dígito do CPF
             return segundoDigitoVerificador == Character.getNumericValue(cpf.charAt(10));
 
         } catch (InputMismatchException erro) {
+            // Captura erro caso a conversão de caracteres falhe
             return false;
         }
 

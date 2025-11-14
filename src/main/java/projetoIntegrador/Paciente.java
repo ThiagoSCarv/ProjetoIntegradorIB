@@ -1,7 +1,6 @@
 package projetoIntegrador;
-
-import java.sql.Date;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Paciente {
     private int id_endereco;
@@ -10,11 +9,11 @@ public class Paciente {
     private Phone telefone;
     private String escolaridade;
     private boolean doente;
-    private Date dataDeNasc;
+    private String dataDeNasc;
 
     public Paciente(){}
 
-    public Paciente(int id_endereco, CPF cpf, String nome, Phone telefone, String escolaridade, boolean doente, Date dataDeNasc){
+    public Paciente(int id_endereco, CPF cpf, String nome, Phone telefone, String escolaridade, boolean doente, String dataDeNasc){
         this.id_endereco = id_endereco;
         this.cpf = cpf;
         this.nome = nome;
@@ -63,10 +62,10 @@ public class Paciente {
     public void setDoente(boolean doente) {
         this.doente = doente;
     }
-    public Date getDataDeNasc() {
+    public String getDataDeNasc() {
         return this.dataDeNasc;
     }
-    public void setDataDeNasc(Date d) {
+    public void setDataDeNasc(String d) {
         this.dataDeNasc = d;
     }
 }

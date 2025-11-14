@@ -11,7 +11,7 @@ public class CreateTablePaciente implements ModelTable{
                                     "telefone VARCHAR(15) NOT NULL," +
                                     "escolaridade VARCHAR(15) NOT NULL," +
                                     "doente BOOLEAN NOT NULL," +
-                                    "data_de_nasc DATE NOT NULL," +
+                                    "data_de_nasc VARCHAR(15) NOT NULL," +
                                     "created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()," +
                                     "updated_at  TIMESTAMP WITH TIME ZONE DEFAULT NOW()" +
                                     ")";

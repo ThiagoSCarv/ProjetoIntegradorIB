@@ -1,18 +1,21 @@
 package projetoIntegrador;
 
+import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 
 public class Paciente {
+    private int id_endereco;
     private CPF cpf;
     private String nome;
     private Phone telefone;
     private String escolaridade;
     private boolean doente;
-    private DateTimeFormatter dataDeNasc;
+    private Date dataDeNasc;
 
     public Paciente(){}
 
-    public Paciente(CPF cpf, String nome, Phone telefone, String escolaridade, boolean doente, DateTimeFormatter dataDeNasc){
+    public Paciente(int id_endereco, CPF cpf, String nome, Phone telefone, String escolaridade, boolean doente, Date dataDeNasc){
+        this.id_endereco = id_endereco;
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
@@ -20,6 +23,15 @@ public class Paciente {
         this.doente = doente;
         this.dataDeNasc = dataDeNasc;
     }
+
+    public int getId_endereco() {
+        return id_endereco;
+    }
+
+    public void setId_endereco(int id_endereco) {
+        this.id_endereco = id_endereco;
+    }
+
     public StringBuilder getCpf() {
         return this.cpf.getCpf();
     }
@@ -51,10 +63,10 @@ public class Paciente {
     public void setDoente(boolean doente) {
         this.doente = doente;
     }
-    public DateTimeFormatter getDataDeNasc() {
+    public Date getDataDeNasc() {
         return this.dataDeNasc;
     }
-    public void setDataDeNasc(DateTimeFormatter d) {
+    public void setDataDeNasc(Date d) {
         this.dataDeNasc = d;
     }
 }

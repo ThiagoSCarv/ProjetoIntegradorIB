@@ -1,6 +1,7 @@
 package projetoIntegrador.database.migrations;
 
-import projetoIntegrador.database.PostgreSQLConnection;
+
+import projetoIntegrador.PostgreSQLConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +12,7 @@ public class Migration {
 
     public Connection connection;
     CreateTablePaciente tablePaciente = new CreateTablePaciente();
+    CreateTableEndereco tableEndereco = new CreateTableEndereco();
 
     public Migration(){
         connection = PostgreSQLConnection.getConnection();
@@ -19,6 +21,7 @@ public class Migration {
     public void CreateTables() {
         List<String> createTables = new ArrayList<>();
 
+        createTables.add(tableEndereco.createTable());
         createTables.add(tablePaciente.createTable());
 
         try {
@@ -34,7 +37,7 @@ public class Migration {
 
     public void DropTables() {
         List<String> dropTables = new ArrayList<>();
-
+        dropTables.add(tableEndereco.dropTable());
         dropTables.add(tablePaciente.dropTable());
 
         try {

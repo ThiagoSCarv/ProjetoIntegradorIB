@@ -3,7 +3,7 @@ package projetoIntegrador.controllers;
 import projetoIntegrador.CPF;
 import projetoIntegrador.Paciente;
 import projetoIntegrador.Phone;
-import projetoIntegrador.database.PostgreSQLConnection;
+import projetoIntegrador.PostgreSQLConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,7 +31,7 @@ public class PacienteController {
             pst.setString(7, paciente.getDataDeNasc());
 
             int rows = pst.executeUpdate();
-            System.out.println(rows + "Cadastro feito com sucesso");
+            System.out.println(rows + " Cadastro feito com sucesso");
 
         } catch (Exception e) {
             e.printStackTrace();

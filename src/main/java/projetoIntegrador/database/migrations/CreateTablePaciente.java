@@ -13,14 +13,14 @@ public class CreateTablePaciente implements ModelTable{
                                     "doente BOOLEAN NOT NULL," +
                                     "data_de_nasc VARCHAR(15) NOT NULL," +
                                     "created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()," +
-                                    "updated_at  TIMESTAMP WITH TIME ZONE DEFAULT NOW()" +
-                                    ")";
+                                    "updated_at  TIMESTAMP WITH TIME ZONE DEFAULT NOW()," +
+                                    "CONSTRAINT fk_endereco FOREIGN KEY (id_endereco) REFERENCES endereco(id) ON DELETE SET NULL ON UPDATE CASCADE); ";
         return sqlInstruction;
     }
 
     @Override
     public String dropTable() {
-        String sqlInstruction = "DROP TABLE paciente";
+        String sqlInstruction = "DROP TABLE paciente CASCADE; ";
         return sqlInstruction;
     }
 }

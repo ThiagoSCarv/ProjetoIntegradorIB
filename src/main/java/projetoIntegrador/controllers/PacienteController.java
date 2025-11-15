@@ -81,21 +81,23 @@ public class PacienteController {
 
     };
     public void index(){
-        String sqlInstruction = "SELECT * FROM paciente";
+        String sqlInstruction = "SELECT nome, cpf, telefone, escolaridade, doente, data_de_nasc, rua, bairro, numero, cep FROM paciente INNER JOIN endereco ON paciente.id_endereco = endereco.id;";
        try {
 
            Statement pst = connection.createStatement();
            ResultSet result = pst.executeQuery(sqlInstruction);
 
            while (result.next()) {
-               System.out.println(result.getInt("id") + "|" +
-                       result.getInt("id_endereco") + "|" +
-                       result.getString("nome") + "|" +
-                       result.getString("cpf") + "|" +
-                       result.getString("telefone") + "|" +
-                       result.getString("escolaridade") + "|" +
-                       result.getBoolean("doente") + "|" +
-                       result.getDate("data_de_nasc"));
+               System.out.println(result.getString("nome") + " | " +
+                       result.getString("cpf") + " | " +
+                       result.getString("telefone") + " | " +
+                       result.getString("escolaridade") + " | " +
+                       result.getBoolean("doente") + " | " +
+                       result.getDate("data_de_nasc") + " | " +
+                       result.getString("rua") + " | " +
+                       result.getString("bairro") + " | " +
+                       result.getInt("numero") + " | " +
+                       result.getString("cep"));
            }
 
        } catch (Exception ex) {
@@ -104,7 +106,7 @@ public class PacienteController {
 
     };
     public void show(int id){
-        String sqlInstruction = "SELECT * FROM paciente WHERE id = ?";
+        String sqlInstruction = "SELECT * FROM paciente WHERE id = ?;";
 
         try {
             PreparedStatement pst = connection.prepareStatement(sqlInstruction);

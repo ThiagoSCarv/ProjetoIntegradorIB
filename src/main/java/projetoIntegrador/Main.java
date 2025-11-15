@@ -1,5 +1,6 @@
 package projetoIntegrador;
 
+import projetoIntegrador.controllers.EnderecoController;
 import projetoIntegrador.controllers.PacienteController;
 import projetoIntegrador.database.migrations.Migration;
 import java.time.LocalDate;
@@ -18,8 +19,15 @@ public class Main {
 
         LocalDate dataDeNascimento = LocalDate.of(2000, 10, 10);
 
+        Endereco meuEndereco = new Endereco(1, "Rua dos Bobos", "Jardim Alvorada", 1, "75104-879");
+
         Paciente paciente = new Paciente(1, meuCPF, "Thiago", meuTelefone, "Graduando", false, dataDeNascimento.toString());
         PacienteController pacienteController = new PacienteController();
+        EnderecoController enderecoController = new EnderecoController();
+        Endereco meuEndereco2 = new Endereco(2, "Rua N", "Setor Aeroporto", 60, "75104-989");
+        enderecoController.create(meuEndereco);
+        enderecoController.update(1, meuEndereco2);
+        enderecoController.index();
         pacienteController.create(paciente);
         pacienteController.index();
         CPF meuCPF2 = new CPF("57507522083");
@@ -29,7 +37,6 @@ public class Main {
         pacienteController.update(1, pacienteUpdate);
         pacienteController.index();
         pacienteController.show(1);
-        pacienteController.remove(1);
     }
 
 

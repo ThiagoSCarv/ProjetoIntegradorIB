@@ -1,0 +1,8 @@
+CREATE TABLE vacina (
+    id_vacina SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    tratamento VARCHAR(255),
+    qtd_doses SMALLINT NOT NULL DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+ );

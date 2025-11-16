@@ -3,7 +3,10 @@ package com.example.crud.domain.patient;
 import com.example.crud.domain.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 enum Status {
@@ -41,6 +44,15 @@ public class Patient {
 
     @Column(name = "data_de_nasc")
     private LocalDate dataNascimento;
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private Timestamp dataCriacao;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Timestamp dataAtualizacao;
+
 
     @OneToOne
     @JoinColumn(name="id_endereco")

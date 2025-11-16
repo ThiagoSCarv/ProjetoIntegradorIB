@@ -8,7 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.sql.Timestamp;
 
 @Table(name="regiao")
-@Entity(name="Region")
+@Entity(name="regiao")
 @Getter
 @Setter
 @NoArgsConstructor

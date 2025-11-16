@@ -9,7 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.sql.Timestamp;
 
 @Table(name="endereco")
-@Entity(name="Address")
+@Entity(name="endereco")
 @Getter
 @Setter
 @NoArgsConstructor

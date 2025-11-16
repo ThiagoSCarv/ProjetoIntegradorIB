@@ -57,4 +57,13 @@ public class Patient {
     @OneToOne
     @JoinColumn(name="id_endereco")
     private Address endereco;
+
+    public Patient(RequestPatient requestPatient) {
+        this.nome = requestPatient.nome();
+        this.cpf = requestPatient.cpf();
+        this.telefone = requestPatient.telefone();
+        this.status = requestPatient.status();
+        this.escolaridade = requestPatient.escolaridade();
+        this.dataNascimento = requestPatient.dataNascimento();
+    }
 }

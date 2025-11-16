@@ -30,4 +30,8 @@ public class Region {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Timestamp dataAtualizacao;
+
+    public Region(RequestRegion requestRegion) {
+        this.nome = requestRegion.nome();
+    }
 }

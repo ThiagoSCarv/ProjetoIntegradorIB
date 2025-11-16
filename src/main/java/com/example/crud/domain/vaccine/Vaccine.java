@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.sql.Timestamp;
 
@@ -35,4 +39,10 @@ public class Vaccine {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Timestamp dataAtualizacao;
+
+    public Vaccine(RequestVaccine requestVaccine) {
+        this.nome = requestVaccine.nome();
+        this.tratamento = requestVaccine.tratamento();
+        this.qtdDoses = requestVaccine.qtdDoses();
+    }
 }

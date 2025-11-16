@@ -1,5 +1,8 @@
 # Projeto Integrador
 
+## Insomnia
+Importe o arquivo insomnia.yaml para testar as rotas
+
 ## DB
 - PostgreSQL
 - Crie um database chamado `projeto_integrador_db`

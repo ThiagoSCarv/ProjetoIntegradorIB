@@ -38,4 +38,11 @@ public class Address {
     @ManyToOne
     @JoinColumn(name="id_regiao")
     private Region regiao;
+
+    public Address(RequestAddress requestAddress) {
+        this.rua = requestAddress.rua();
+        this.bairro = requestAddress.bairro();
+        this.numero = requestAddress.numero();
+        this.cep = requestAddress.cep();
+    }
 }

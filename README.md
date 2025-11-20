@@ -1,8 +1,5 @@
 # Projeto Integrador
 
-## Insomnia
-Importe o arquivo insomnia.yaml para testar as rotas
-
 ## DB
 - PostgreSQL
 - Crie um database chamado `projeto_integrador_db`
@@ -17,3 +14,4 @@ Importe o arquivo insomnia.yaml para testar as rotas
 
 ## Instruções
 - Para testar a api, rode a seed antes para preencher o banco de dados.
+- Para testar as rotas, importe o arquivo insomnia.yaml 

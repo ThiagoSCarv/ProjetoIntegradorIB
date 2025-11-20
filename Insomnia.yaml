@@ -19,20 +19,20 @@ collection:
         meta:
           id: req_da1e175e9aef4ce99211a11702b72c3a
           created: 1763325189311
-          modified: 1763334960168
+          modified: 1763639792444
           isPrivate: false
           description: ""
           sortKey: -1763324736701.5
         method: POST
         body:
           mimeType: application/json
-          text: |
+          text: |-
             {
-            	"rua": "rua 1",
-            	"bairro": "bairro 1",
-            	"numero": 1,
-            	"cep": "12345678",
-            	"idRegiao": 1
+            	"rua": "Rua T-63",
+            	"bairro": "Setor Bueno",
+            	"numero": 450,
+            	"cep": "74230-100",
+            	"idRegiao": 2
             }
         headers:
           - name: Content-Type
@@ -297,7 +297,7 @@ collection:
         meta:
           id: req_9c2a31cb160c4c939c7d709008ff0272
           created: 1763331791028
-          modified: 1763332004387
+          modified: 1763639802782
           isPrivate: false
           description: ""
           sortKey: -1763328150260.8125
@@ -306,9 +306,9 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"nome": "vacina teste 2",
-            	"tratamento": "dor de cabeça",
-            	"qtdDoses": 3
+              "nome": "Influenza Trivalente",
+              "tratamento": "Gripe",
+              "qtdDoses": 1
             }
         headers:
           - name: Content-Type
@@ -419,7 +419,7 @@ collection:
         meta:
           id: req_a3883e0405114cfcbf6b5b06596360d3
           created: 1763333374659
-          modified: 1763333387502
+          modified: 1763636482749
           isPrivate: false
           description: ""
           sortKey: -1763333377542
@@ -461,7 +461,7 @@ collection:
         meta:
           id: req_cc5068b3c3a441ea8740c381b218f50c
           created: 1763333403859
-          modified: 1763333548383
+          modified: 1763639715466
           isPrivate: false
           description: ""
           sortKey: -1763333403859
@@ -470,12 +470,12 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"nome": "ze",
-            	"cpf": "12345678",
-            	"telefone": "12345678",
+            	"nome": "João da Silva",
+            	"cpf": "12345678901",
+            	"dataNascimento": "1985-05-10",
+            	"telefone": "(62) 99988-1111",
             	"status": "SAUDAVEL",
             	"escolaridade": "SUPERIOR",
-            	"dataNascimento": "1990-01-01",
             	"idEndereco": 1
             }
         headers:
@@ -496,7 +496,7 @@ collection:
         meta:
           id: req_0759e495e08246f2943cb45b4f0949b4
           created: 1763335030488
-          modified: 1763335041416
+          modified: 1763639744395
           isPrivate: false
           description: ""
           sortKey: -1763333390700.5
@@ -505,12 +505,12 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"nome": "ze da feira",
-            	"cpf": "12345678",
-            	"telefone": "12345678",
+            	"nome": "João da Silva Sauro",
+            	"cpf": "12345678901",
+            	"dataNascimento": "1985-05-10",
+            	"telefone": "(62) 99988-1111",
             	"status": "SAUDAVEL",
             	"escolaridade": "SUPERIOR",
-            	"dataNascimento": "1990-01-01",
             	"idEndereco": 1
             }
         headers:
@@ -560,7 +560,7 @@ collection:
         meta:
           id: req_d7c41bdef03a4eee9cdf8b6f14073d18
           created: 1763335698183
-          modified: 1763335711826
+          modified: 1763638384197
           isPrivate: false
           description: ""
           sortKey: -1763335675985
@@ -581,7 +581,7 @@ collection:
         meta:
           id: req_d22f8c03d6644fa0aa6bea3aacac1296
           created: 1763336066187
-          modified: 1763336150732
+          modified: 1763639823918
           isPrivate: false
           description: ""
           sortKey: -1763334539922
@@ -593,7 +593,7 @@ collection:
             	"idPaciente": 2,
             	"idVacina": 1,
             	"dose": 1,
-            	"dataAplicacao": "2000-01-01"
+            	"dataAplicacao": "2023-06-15"
             }
         headers:
           - name: Content-Type
@@ -662,6 +662,77 @@ collection:
         headers:
           - name: Content-Type
             value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Reports
+    meta:
+      id: fld_b81b72420cd94d59b1b50a6b2a07273e
+      created: 1763639437978
+      modified: 1763639441343
+      sortKey: -1763335670479
+      description: ""
+    children:
+      - url: "{{ _.baseUrl }}/patient-vaccine/reports/vaccine/4/status"
+        name: Get Report Vaccine vs Status
+        meta:
+          id: req_093c34d6199e4b54aaf9765691727a26
+          created: 1763638338940
+          modified: 1763639446398
+          isPrivate: false
+          description: ""
+          sortKey: -1763639446334
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}/patient-vaccine/reports/vaccine/5/schooling"
+        name: Get Report Vaccine vs Schooling
+        meta:
+          id: req_6342e89afb8f4bf7a0af8ef1b3723752
+          created: 1763638701164
+          modified: 1763639449925
+          isPrivate: false
+          description: ""
+          sortKey: -1763639446434
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseUrl }}/patient-vaccine/reports/vaccine/4/region"
+        name: Get Report Vaccine vs Region
+        meta:
+          id: req_369676260f9e4bd7be39144b72e84153
+          created: 1763639338305
+          modified: 1763639451751
+          isPrivate: false
+          description: ""
+          sortKey: -1763639446534
+        method: GET
+        headers:
           - name: User-Agent
             value: insomnia/12.0.0
         settings:

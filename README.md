@@ -14,3 +14,6 @@ Importe o arquivo insomnia.yaml para testar as rotas
 
 ## Modelo Lógico
 ![modelo-tabela.png](modelo-tabela.png)
+
+## Instruções
+- Para testar a api, rode a seed antes para preencher o banco de dados.
